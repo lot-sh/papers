@@ -21,7 +21,7 @@ syntax = "proto3";
 package delta.pb;
 
 message Delta {
-  // Parent reference if null the delta is considered as new
+  // Parent reference if null the delta is considered as a new
   bytes Parent = 1;
   // Compressed delta data
   bytes Data = 2;
@@ -30,6 +30,16 @@ message Delta {
 }
 ```
 
+## Implementations
+
+- [Golang](https://github.com/lot-sh/go-delta-encoding)
+- [Javascript](https://github.com/lot-sh/js-delta-encoding)
+
 ## Codecs
 
-- 0x1 [Fossil](<https://en.wikipedia.org/wiki/Fossil_(file_system)>) [source](http://fossil-scm.org/xfer/artifact/e5c5c088b05441b7)/[LZMA](https://es.wikipedia.org/wiki/LZMA)
+- 0x1 [Fossil](<https://en.wikipedia.org/wiki/Fossil_(file_system)>)/[LZMA](https://es.wikipedia.org/wiki/LZMA)
+- 0x2 [zdelta][http://cis.poly.edu/tr/tr-cis-2002-02.pdf]
+
+# References
+
+- https://github.com/balacode/go-delta
