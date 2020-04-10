@@ -6,6 +6,13 @@ This provides a simple method to handle version control. Each blob has to repres
 
 Also specify the encoding used when the blob was create in order to reconize which stragety take to decode.
 
+## Why not store the raw
+
+<img src="./images/delta-encoding.svg" />
+/_Pure text files generate a pure text delta.
+Binary files generate a delta that may contain some binary data.
+The delta encoding does not attempt to compress the content. It was considered to be much more sensible to do compression using a separate general-purpose compression library, like zlib._/
+
 ## Data Model
 
 ```proto
