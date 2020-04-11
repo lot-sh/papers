@@ -8,14 +8,11 @@ Also specify the encoding used when the blob was create in order to reconize whi
 
 ## Why not store the raw
 
-<img src="./images/delta-encoding.svg" />
-/_Pure text files generate a pure text delta.
-Binary files generate a delta that may contain some binary data.
-The delta encoding does not attempt to compress the content. It was considered to be much more sensible to do compression using a separate general-purpose compression library, like zlib._/
+![](.gitbook/assets/delta-encoding.svg) /_Pure text files generate a pure text delta. Binary files generate a delta that may contain some binary data. The delta encoding does not attempt to compress the content. It was considered to be much more sensible to do compression using a separate general-purpose compression library, like zlib._/
 
 ## Data Model
 
-```proto
+```text
 syntax = "proto3";
 
 package delta.pb;
@@ -32,4 +29,5 @@ message Delta {
 
 ## Codecs
 
-- 0x1 [Fossil](<https://en.wikipedia.org/wiki/Fossil_(file_system)>) [source](http://fossil-scm.org/xfer/artifact/e5c5c088b05441b7)/[LZMA](https://es.wikipedia.org/wiki/LZMA)
+* 0x1 \[Fossil\]\([https://en.wikipedia.org/wiki/Fossil\_\(file\_system\)](https://en.wikipedia.org/wiki/Fossil_%28file_system%29)\) [source](http://fossil-scm.org/xfer/artifact/e5c5c088b05441b7)/[LZMA](https://es.wikipedia.org/wiki/LZMA)
+
